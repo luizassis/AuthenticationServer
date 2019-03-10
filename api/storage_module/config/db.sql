@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS public.user
   email character varying(255) NOT NULL,
   password character varying(255) NOT NULL,
   registered_on timestamp without time zone NOT NULL,
-  admin boolean NOT NULL,
+  admin boolean NOT NULL DEFAULT false,
+  verified boolean NOT NULL DEFAULT false,
   CONSTRAINT users_pkey PRIMARY KEY (id),
   CONSTRAINT users_email_key UNIQUE (email)
 )

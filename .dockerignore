@@ -1,0 +1,7 @@
+.vscode
+.git/
+.gitignore
+storage_module/config/*.sql
+README.md
+__pycache__/
+utils/start_docker.sh

@@ -28,7 +28,7 @@ class UserRegister(Resource):
         try:
             json_data = request.get_json()
         except Exception as error:
-            return {'status': 'invalid input data'}, 500
+            return {'status':'fail','message': 'invalid input data'}, 500
         
         # trying store data into database
         try:
@@ -39,11 +39,11 @@ class UserRegister(Resource):
                 id_user = db.storeUser(json_data['email'],password)
             else:
                 # HTTP 409: Conflict
-                return {'status':'email already registered'}, 409
+                return {'status':'fail','message':'Email already registered'}, 409
         except Exception as error:
-            return {'status': 'internal error in API registry'}, 500
+            return {'status':'fail','message': 'internal error in API registry'}, 500
         
-        return {'status':'completed'}, 201
+        return {'status':'success','message': 'Completed'}, 201
 
 class Login(Resource):
     """
@@ -57,7 +57,7 @@ class Login(Resource):
         try:
             json_data = request.get_json()
         except Exception as error:
-            return {'status': 'invalid input data'}, 500
+            return {'status':'fail','message': 'invalid input data'}, 500
         
         try:
             db = UserDao()

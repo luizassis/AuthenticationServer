@@ -13,7 +13,8 @@ class User:
     
     SECRET_KEY='teste123'
     EXPIRATION_DAY=0
-    EXPIRATION_SECONDS=1800
+    # x hours * 60 min * 60 sec (default 6 hours)
+    EXPIRATION_SECONDS=6 * 60 * 60
 
     #constructor
     def __init__(self, id, email, password, registered_on, verified=False, admin=False):

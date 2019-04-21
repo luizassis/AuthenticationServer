@@ -21,6 +21,11 @@ deactivate
 
 ```
 
+```sh
+# To generate the package installed list
+pip freeze -l > utils/requirements.txt
+```
+
 ## To run using gunicorn use:
 
 ```sh

@@ -120,7 +120,7 @@ class CheckAuthorization(Resource):
                             'user_id': user.id,
                             'email': user.email,
                             'admin': user.admin,
-                            'registered_on': user.registered_on
+                            'registered_at': user.registered_on
                         }
                     }
                     return responseObject, 200

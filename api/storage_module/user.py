@@ -12,7 +12,7 @@ class User:
     admin=False
     
     SECRET_KEY='teste123'
-    EXPIRATION_DAY=0
+    EXPIRATION_DAY=10
     # x hours * 60 min * 60 sec (default 6 hours)
     EXPIRATION_SECONDS=6 * 60 * 60
 
